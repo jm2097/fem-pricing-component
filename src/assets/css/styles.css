@@ -20,6 +20,7 @@
   --blue-2: hsl(234, 14%, 74%);
   --blue-3: hsl(233, 13%, 49%);
   --blue-4: hsl(232, 13%, 33%);
+  --h-main-card: 50px;
 }
 
 *,
@@ -87,11 +88,13 @@ body {
   border-radius: 4px;
   padding: 2rem;
   box-shadow: 0 0 20px rgb(228, 228, 228);
+  position: relative;
 }
 
 .card-main {
-  height: calc(100% + 30px);
+  height: calc(100% + var(--h-main-card));
   z-index: 1;
+  bottom: calc(var(--h-main-card) - var(--h-main-card) / 2);
 }
 
 .btn {
