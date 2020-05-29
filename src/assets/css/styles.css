@@ -21,6 +21,7 @@
   --blue-3: hsl(233, 13%, 49%);
   --blue-4: hsl(232, 13%, 33%);
   --h-main-card: 50px;
+  --list-item-border: solid 1px rgba(214, 214, 214, 0.541);
 }
 
 *,
@@ -92,10 +93,11 @@ body {
   position: relative;
 }
 
-.card-main {
+.card.card-main {
   height: calc(100% + var(--h-main-card));
   z-index: 1;
   bottom: calc(var(--h-main-card) - var(--h-main-card) / 2);
+  border-color: #e2e2ff;
 }
 
 /* button */
@@ -129,6 +131,11 @@ ol.list {
 li.list-item,
 ol.list-item {
   padding: 1.5rem;
-  border-top: solid 1px rgba(214, 214, 214, 0.541);
+  border-top: var(--list-item-border);
   text-align: center;
+}
+
+li.list-item:last-of-type,
+ol.list-item:last-of-type {
+  border-bottom: var(--list-item-border);
 }
