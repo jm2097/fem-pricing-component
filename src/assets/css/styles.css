@@ -200,6 +200,19 @@ h6,
   height: 40%;
 }
 
+.no-border-top-left {
+  border-top-left-radius: 0 !important;
+}
+.no-border-bottom-left {
+  border-bottom-left-radius: 0 !important;
+}
+.no-border-top-right {
+  border-top-right-radius: 0 !important;
+}
+.no-border-bottom-right {
+  border-bottom-right-radius: 0 !important;
+}
+
 /* ==========================
     [2] components
 ========================== */
@@ -231,16 +244,28 @@ h6,
   text-transform: uppercase;
   padding: 1rem 1rem;
   letter-spacing: 0.12rem;
+  font-size: 80%;
+}
+
+.btn:hover {
+  background: transparent;
 }
 
 .btn-primary {
   background: var(--bg-primary);
   color: var(--blue-1);
 }
+.btn-primary:hover {
+  color: var(--primary);
+  border-color: var(--blue-3);
+}
 
 .btn-secondary {
   background: var(--blue-1);
   color: var(--primary);
+}
+.btn-secondary:hover {
+  color: var(--blue-1);
 }
 
 .btn-block {
