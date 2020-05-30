@@ -296,6 +296,7 @@ ol.list-item:last-of-type {
 /* switch */
 .toggle-switch {
   display: inline-block;
+  min-width: 55px;
   width: 55px;
   height: 30px;
   padding: 4px;
@@ -304,6 +305,11 @@ ol.list-item:last-of-type {
   position: relative;
   cursor: pointer;
   user-select: none;
+  transition: opacity 300ms ease;
+}
+
+.toggle-switch:hover {
+  opacity: 0.6;
 }
 
 .toggle-switch input {
