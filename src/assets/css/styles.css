@@ -231,10 +231,17 @@ h6,
 }
 
 .card.card-main {
-  height: calc(100% + var(--h-main-card));
-  z-index: 1;
-  bottom: calc(var(--h-main-card) - var(--h-main-card) / 2);
+  height: auto;
+
   border-color: #d7d7fd;
+}
+
+@media screen and (min-width: 768px) {
+  .card.card-main {
+    height: calc(100% + var(--h-main-card));
+    bottom: calc(var(--h-main-card) - var(--h-main-card) / 2);
+    z-index: 1;
+  }
 }
 
 /* button */
