@@ -153,6 +153,18 @@ h6,
   font-size: 6rem;
 }
 
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
 .section {
   position: relative;
 }
@@ -199,7 +211,7 @@ h6,
   justify-content: center;
   align-items: center;
   border-radius: 8px;
-  padding: 2rem;
+  padding: 2.5rem 3rem;
   box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.15);
   position: relative;
   background-color: #fff;
@@ -254,4 +266,37 @@ ol.list-item {
 li.list-item:last-of-type,
 ol.list-item:last-of-type {
   border-bottom: var(--list-item-border);
+}
+
+/* switch */
+.toggle-switch {
+  display: inline-block;
+  width: 55px;
+  height: 30px;
+  padding: 4px;
+  margin: 0;
+  background: var(--bg-primary);
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+}
+
+.toggle-switch input {
+  display: none;
+}
+
+.slider {
+  width: 50%;
+  height: 100%;
+  background: #fff;
+  transition: transform 250ms ease;
+}
+
+.toggle-switch input:checked + .slider {
+  transform: translateX(100%);
+}
+
+.toggle-switch.rounded,
+.toggle-switch.rounded .slider {
+  border-radius: 180px;
 }
