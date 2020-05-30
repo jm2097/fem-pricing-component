@@ -15,12 +15,17 @@
     [2] base styles
 ========================== */
 :root {
-  --primary: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+  --primary: #9091dd;
+  --bg-primary: linear-gradient(
+    to right,
+    hsl(236, 72%, 79%),
+    hsl(237, 63%, 64%)
+  );
   --blue-1: hsl(240, 78%, 98%);
   --blue-2: hsl(234, 14%, 74%);
   --blue-3: hsl(233, 13%, 49%);
   --blue-4: hsl(232, 13%, 33%);
-  --h-main-card: 50px;
+  --h-main-card: 40px;
   --list-item-border: solid 1px rgba(214, 214, 214, 0.541);
 }
 
@@ -42,8 +47,74 @@ html {
 
 body {
   font: 700 1.5rem/1.5 'Montserrat', sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
   margin: 0;
   color: var(--blue-3);
+  background-color: var(--blue-1);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  margin-bottom: 0.5rem;
+  font-family: inherit;
+  font-weight: 700;
+  line-height: 1.2;
+  color: inherit;
+}
+
+h1,
+.h1 {
+  font-size: 2.5rem;
+}
+
+h2,
+.h2 {
+  font-size: 2rem;
+}
+
+h3,
+.h3 {
+  font-size: 1.75rem;
+}
+
+h4,
+.h4 {
+  font-size: 1.5rem;
+}
+
+h5,
+.h5 {
+  font-size: 1.25rem;
+}
+
+h6,
+.h6 {
+  font-size: 1rem;
 }
 
 .text-blue-1 {
@@ -63,9 +134,18 @@ body {
 }
 
 .bg-primary {
-  background: var(--primary);
+  background: var(--bg-primary);
 }
 
+.font-size-xs {
+  font-size: 0.4rem;
+}
+.font-size-sm {
+  font-size: 0.7rem;
+}
+.font-size-md {
+  font-size: 1rem;
+}
 .font-size-lg {
   font-size: 3rem;
 }
@@ -73,8 +153,39 @@ body {
   font-size: 6rem;
 }
 
+.section {
+  position: relative;
+}
+
 #section-pricing {
   min-height: 100vh;
+}
+
+#section-pricing::before,
+#section-pricing::after {
+  content: '';
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  z-index: -1;
+}
+
+#section-pricing::after {
+  background-image: url(../images/bg-top.svg);
+  background-position: right;
+  top: 0;
+  right: 0;
+  width: 20%;
+  height: 80%;
+}
+
+#section-pricing::before {
+  background-image: url(../images/bg-bottom.svg);
+  background-position: left;
+  bottom: 0;
+  left: 0;
+  width: 20%;
+  height: 40%;
 }
 
 /* ==========================
@@ -89,31 +200,35 @@ body {
   align-items: center;
   border-radius: 8px;
   padding: 2rem;
-  box-shadow: 0 0 20px rgb(228, 228, 228);
+  box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.15);
   position: relative;
+  background-color: #fff;
 }
 
 .card.card-main {
   height: calc(100% + var(--h-main-card));
   z-index: 1;
   bottom: calc(var(--h-main-card) - var(--h-main-card) / 2);
-  border-color: #e2e2ff;
+  border-color: #d7d7fd;
 }
 
 /* button */
 .btn {
-  border-radius: 4px;
-  border: solid 1px transparent;
+  border: solid 1px #d6d6ff;
+  border-radius: 6px;
+  text-transform: uppercase;
+  padding: 1rem 1rem;
+  letter-spacing: 0.12rem;
 }
 
 .btn-primary {
-  background: var(--primary);
+  background: var(--bg-primary);
   color: var(--blue-1);
 }
 
 .btn-secondary {
   background: var(--blue-1);
-  color: var(--blue-4);
+  color: var(--primary);
 }
 
 .btn-block {
@@ -126,6 +241,7 @@ ol.list {
   width: 100%;
   list-style-type: none;
   padding: 0;
+  font-size: 80%;
 }
 
 li.list-item,
