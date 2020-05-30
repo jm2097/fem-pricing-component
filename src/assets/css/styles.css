@@ -25,7 +25,7 @@
   --blue-2: hsl(234, 14%, 74%);
   --blue-3: hsl(233, 13%, 49%);
   --blue-4: hsl(232, 13%, 33%);
-  --h-main-card: 40px;
+  --h-main-card: 50px;
   --list-item-border: solid 1px rgba(214, 214, 214, 0.541);
 }
 
@@ -344,6 +344,7 @@ ol.list-item:last-of-type {
 }
 
 .slider {
+  display: block;
   width: 50%;
   height: 100%;
   background: #fff;
